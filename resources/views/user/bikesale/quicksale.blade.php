@@ -10,7 +10,8 @@
         <div class="row">
             <div class="col-md-12">
                 <h3 class="ad-post-head mb-0 pt-5 text-center">
-                    Welcome {{Auth::user()->fullname}} Let's Quick Posting.
+                    Welcome {{Auth::user()->fullname}} <br>
+                    Let's Quick Posting.
                 </h3>
             </div>
         </div>
@@ -40,7 +41,7 @@
             <div class="row">
                 <h5> @include('errors.formerror')</h5>
                 <div class="col-md-12">
-                    <div class="ad-form mb-5" style="border: 1px solid gray;background: lightgray;">
+                    <div class="ad-form mb-5" style="">
                         {!! Form::open(['url' => 'user/quickstore', 'class' => 'row g-3', 'files'=>'true']) !!}
                         <div class="col-md-12">
                             {!! Form::label('title', 'Title/Bike Name *') !!}
@@ -49,11 +50,11 @@
 
                         </div>
                     
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <label for="inputState" class="form-label">Select Brand  *</label>
                                   {!!Form::select('bikebrand_id',CommonFx::BikeBrand(),null, array('id'=>'bikebrand_id','required','class'=>'form-control js-example-basic-single','placeholder'=>'Select Brand'))!!}
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
 
                                 <label for="inputState" class="form-label">Select Model  *</label>
                                 <select class="form-select js-example-basic-single" id="bikemodel_id" name="bikemodel_id" required>
@@ -64,7 +65,7 @@
                             
                             
                           
-                            <div class="col-12">
+                            <div class="col-md-4">
 
                                 {!! Form::label('price', 'Price (Tk) *') !!}
                                 {!! Form::number('price',null, array('id'=>'price','required','class'=>'form-control', 'min'=>'1','placeholder'=>'Ex: Pick a good price - what would you pay?')) !!}
@@ -78,38 +79,38 @@
                                 </div>
                             </div>
                             <h5 class="text-center">Perfect image dimensions will be 560 x 368 px </h5>
-                            <div class="col-3">
+                            <div class="col-md-3">
                                 <div class="form-group">
                                     <input type="file" name="imageone" required  id="image1">
 
                                 </div>
                                 <img id="preview1" src="https://www.sohibd.com/storage/app/files/shares/backend/not_found.webp"
-                                alt="preview image" style="max-height: 250px;">
+                                alt="preview image" style="max-height: 250px; width:220px;">
                             </div>
-                            <div class="col-3">
+                            <div class="col-md-3">
                                 <div class="form-group">
                                     <input type="file" name="imagetwo"  id="image2" class="d-none">
 
                                 </div>
                                 <img id="preview2" src="https://www.sohibd.com/storage/app/files/shares/backend/not_found.webp"
-                                alt="preview image" style="max-height: 250px;">
+                                alt="preview image" class="d-none" style="max-height: 250px; width:220px;">
                             </div>
-                            <div class="col-3">
+                            <div class="col-md-3">
                                 <div class="form-group">
                                     <input type="file" name="imagethree"  id="image3" class="d-none">
 
                                 </div>
                                 <img id="preview3" src="https://www.sohibd.com/storage/app/files/shares/backend/not_found.webp"
-                                alt="preview image" style="max-height: 250px;">
+                                alt="preview image" class="d-none" style ="max-height: 250px; width:220px;">
                             </div>
 
-                            <div class="col-3">
+                            <div class="col-md-3">
                                 <div class="form-group">
                                     <input type="file" name="imagefour"  id="image4" class="d-none">
 
                                 </div>
                                 <img id="preview4" src="https://www.sohibd.com/storage/app/files/shares/backend/not_found.webp"
-                                alt="preview image" style="max-height: 250px;">
+                                alt="preview image" class="d-none" style="max-height: 250px; width:220px;">
                             </div>
 
                                  <div class="col-6">
@@ -149,7 +150,7 @@
                                 </div>
                             </div>
                             <div class="col-12">
-                                <button type="submit" class="btn post-ad-btn">Quick ad</button>
+                                <button type="submit" class="btn post-ad-btn">Post ad</button>
                             </div>
                         </form>
                     </div>
@@ -210,6 +211,7 @@ $('#image1').change(function(){
             reader.readAsDataURL(this.files[0]);
             // $('#image1').addClass('d-none');
             $('#image2').removeClass('d-none');
+             $('#preview2').removeClass('d-none');
 
            });
            $('#image2').change(function(){
@@ -224,6 +226,7 @@ $('#image1').change(function(){
             reader.readAsDataURL(this.files[0]);
 
             $('#image3').removeClass('d-none');
+            $('#preview3').removeClass('d-none');
 
            });
            $('#image3').change(function(){
@@ -238,6 +241,7 @@ $('#image1').change(function(){
             reader.readAsDataURL(this.files[0]);
 
             $('#image4').removeClass('d-none');
+            $('#preview4').removeClass('d-none');
 
            });
            $('#image4').change(function(){
