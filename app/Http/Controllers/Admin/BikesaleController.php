@@ -52,6 +52,16 @@ class BikesaleController extends Controller
            
           return $button;
       })
+      ->addColumn('allads', function($data){
+        if($data->allads==null){
+       $button = '<a  rid="' . $data->id . '" section="1"  class="btn-sm" id="allactive" title="Active All Ads Page post"><i class="fa fa-ban"></i></a>';
+        }else{
+       $button = '<a   rid="' . $data->id . '" section="2"  class="btn-sm" id="allinactive" title="Inactive All Ads Page post"><i class="fas fa-heart" aria-hidden="true"></i>
+</a>';
+        }
+       
+      return $button;
+  })
        ->addColumn('sections', function($data){
             if($data->section==1){
            $button = '<p class="text-success">Recent Bike</p>';
@@ -73,7 +83,7 @@ class BikesaleController extends Controller
           return $button;
       })
       ->addIndexColumn()
-          ->rawColumns(['action','view','home','sections'])
+          ->rawColumns(['action','view','home','sections','allads'])
           ->make(true);
       }
 
@@ -654,4 +664,16 @@ public function archivelist()
         $list->update();
         return response()->json(['success' => true,],201);
     }
+    public function allads($id,$section){
+      if($section==1){
+      $list =  Bikesale::find($id);
+      $list->allads  =1;
+      $list->update();}
+      else{
+        $list =  Bikesale::find($id);
+      $list->allads  =null;
+      $list->update();  
+      }
+      return response()->json(['success' => true,],201);
+  }
 }

@@ -36,6 +36,7 @@ Route::group([ 'prefix'=>'admin',
         Route::get('home-active/{id}/{section}','BikesaleController@home_active');
         Route::get('home-inactive/{id}','BikesaleController@home_inactive');
         //bikesale end
+        Route::get('allads/{id}/{section}','BikesaleController@allads');
         //bikemodel and 
         Route::post('createbikemodel','BikesaleController@store');
         Route::get('editbikesale/{id}','BikesaleController@edit');
