@@ -11,7 +11,7 @@
     <div class="container">
         <ul class="ac-menu ps-0 mb-0">
             <li><a href="{{url('user/profile')}}">My account</a></li>
-            <li><a href="{{url('user/membership')}}">My membership</a></li>
+            <!--<li><a href="{{url('user/membership')}}">My membership</a></li>-->
             <li><a href="{{url('user/addshop')}}">Shop</a></li>
            <li><a href="{{url('user/dashboard')}}" style="color: #000;"><b>Dashboard</b></a></li>
         </ul>
@@ -26,35 +26,18 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="ac-user-name">
-                                <p>
-                                    <b><a href="{{url('user/bikesale/create')}}">Post For Bike Sale</a></b>
+                                <p class="text-center">
+                                    <b><a class="btn  btn-danger" href="{{url('user/bikesale/create')}}">Post For Bike Sale</a></b>
+                                    <!--<b><a class="btn  btn-danger" href="{{url('user/addsale')}}">Post For Bike Buy</a></b>-->
+                                    <b><a class="btn  btn-danger" href="{{url('user/quick-sale')}}">Quick Post for Bike Sale</a></b>
                                 </p>
                             </div>
 
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="ac-user-name">
-                                <p>
-                                    <b><a href="{{url('user/addsale')}}">Post For Bike Buy</a></b>
-                                </p>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="row ">
-                        <div class="col-md-12">
-                            <div class="ac-user-name">
-                                <p>
-                                    <b><a href="{{url('user/quick-sale')}}">Quick Post for Bike Sale</a></b>
-                                </p>
-                            </div>
-
-                        </div>
-                    </div>
-                    <h1 class="text-center">Bike Sale Post List  </h1>
-                    <h3 class="text-center"> You Can {{@Auth::user()->salepost}}  Post For Bike Sale</h3>
+                    
+                    <h3 class="text-center ">Bike Sale Post List  </h3>
+                    <h5 class="text-center"> You Can {{@Auth::user()->salepost}}  Post For Bike Sale</h5>
                     <table id="dataTable" class="table display table-striped  bordered nowrap"  style="width: 100%;">
                     <thead>
 
