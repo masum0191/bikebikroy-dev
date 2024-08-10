@@ -68,7 +68,7 @@
                                     <h6 class="price">
                                        {{number_format($bike1->price)}} BDT
                                     </h6>
-                                    <p class="card-text mb-0"><?php $area=App\Models\Area::where('thana_id',$bike1->thana_id)->first(); ?>{{@$area->areaname}}, {{@$bike1->thana->thana}}, {{ @$bike1->district->district}} </p>
+                                     <p class="card-text mb-0">{{@$bike1->thana->thana}}, {{@$bike1->district->district}}, {{ @$bike1->division->division}} </p>
                                     
                                 </div>
                             </a>
@@ -137,7 +137,7 @@
                                     <h6 class="price">
                                        {{number_format($bike2->price)}} BDT
                                     </h6>
-                                    <p class="card-text mb-0"><?php $area=App\Models\Area::where('thana_id',$bike2->thana_id)->first(); ?>{{@$area->areaname}}, {{@$bike2->thana->thana}}, {{ @$bike2->district->district}} </p>
+                                   <p class="card-text mb-0">{{@$bike1->thana->thana}}, {{@$bike1->district->district}}, {{ @$bike1->division->division}} </p>
                                     
                                 </div>
                             </a>
@@ -183,7 +183,7 @@
                                     <h6 class="price">
                                        {{number_format($bike3->price)}} BDT
                                     </h6>
-                                    <p class="card-text mb-0"><?php $area=App\Models\Area::where('thana_id',$bike3->thana_id)->first(); ?>{{@$area->areaname}}, {{@$bike3->thana->thana}}, {{ @$bike3->district->district}} </p>
+                                    <p class="card-text mb-0">{{@$bike1->thana->thana}}, {{@$bike1->district->district}}, {{ @$bike1->division->division}} </p>
                                     
                                 </div>
                             </a>
