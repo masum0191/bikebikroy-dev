@@ -370,64 +370,68 @@
             //all ad active
             $(document).on('click', '#allactive', function() {
 
-                if (confirm('Are You Sure All Ads page Banner Active?'));
-                $id = $(this).attr('rid');
-                $section = $(this).attr('section');
-                //console.log($roomid);
-                $info_url = url + '/admin/allads/' + $id + '/' + $section;
-                $.ajax({
-                    url: $info_url,
-                    method: "GET",
-                    type: "GET",
-                    data: {},
-                    success: function(data) {
-                        if (data) {
-                            Swal.fire({
-                                icon: 'warning',
-                                title: "Banner Ad is Active Successfully",
-                                timer: 2000,
-                                showConfirmButton: false,
-                            });
-                            // $('#dataTable').DataTable().ajax.reload();
-                            location.reload();
+                if (confirm('Are You Sure All Ads page Banner Active?')) {
+                    $id = $(this).attr('rid');
+                    $section = $(this).attr('section');
+                    //console.log($roomid);
+                    $info_url = url + '/admin/allads/' + $id + '/' + $section;
+                    $.ajax({
+                        url: $info_url,
+                        method: "GET",
+                        type: "GET",
+                        data: {},
+                        success: function(data) {
+                            if (data) {
+                                Swal.fire({
+                                    icon: 'warning',
+                                    title: "Banner Ad is Active Successfully",
+                                    timer: 2000,
+                                    showConfirmButton: false,
+                                });
+                                // $('#dataTable').DataTable().ajax.reload();
+                                location.reload();
 
+                            }
+                        },
+                        error: function(data) {
+                            console.log(data);
                         }
-                    },
-                    error: function(data) {
-                        console.log(data);
-                    }
-                });
+                    });
+                }
+
             });
             //all ad inactive
             $(document).on('click', '#allinactive', function() {
 
-                if (confirm('Are You Sure All ads page Banner In Active?'));
-                $id = $(this).attr('rid');
-                $section = $(this).attr('section');
-                //console.log($roomid);
-                $info_url = url + '/admin/allads/' + $id + '/' + $section;
-                $.ajax({
-                    url: $info_url,
-                    method: "GET",
-                    type: "GET",
-                    data: {},
-                    success: function(data) {
-                        if (data) {
-                            Swal.fire({
-                                icon: 'warning',
-                                title: "Banner Ad is InActive Successfully",
-                                timer: 2000,
-                                showConfirmButton: false,
-                            });
-                            //$('#dataTable').DataTable().ajax.reload();
-                            location.reload();
+                if (confirm('Are You Sure All ads page Banner In Active?')) {
+                    $id = $(this).attr('rid');
+                    $section = $(this).attr('section');
+                    $info_url = url + '/admin/allads/' + $id + '/' + $section;
+
+                    $.ajax({
+                        url: $info_url,
+                        method: "GET",
+                        type: "GET",
+                        data: {},
+                        success: function(data) {
+                            if (data) {
+                                Swal.fire({
+                                    icon: 'warning',
+                                    title: "Banner Ad is InActive Successfully",
+                                    timer: 2000,
+                                    showConfirmButton: false,
+                                });
+                                location.reload();
+                            }
+                        },
+                        error: function(data) {
+                            console.log(data);
                         }
-                    },
-                    error: function(data) {
-                        console.log(data);
-                    }
-                });
+                    });
+                }
+                // Do nothing if the user clicks 'Cancel'
             });
+
             //Update shift
             $("#Packagemodal").on('click', '#addBtn', function() {
 
@@ -498,7 +502,7 @@
                             });
                             $('#district_id').append(
                                 ' <option  value="" selected disabled>Select District *</option>'
-                                );
+                            );
 
                         }
 
@@ -528,7 +532,7 @@
                             });
                             $('#thana_id').append(
                                 ' <option  value="" selected disabled>Select Thana *</option>'
-                                );
+                            );
                         }
 
                     },
@@ -552,7 +556,7 @@
                             });
                             $('#area_id').append(
                                 ' <option  value="" selected disabled>Select Area *</option>'
-                                );
+                            );
                         }
 
                     },

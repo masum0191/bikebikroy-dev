@@ -78,15 +78,15 @@ public function type($type)
 
         $Bike=Bikesale::with('division','district','thana','bikebrand','user.package','user.bikeshop')->wherestatus('Active')->wherearchive(0)->latest()->whereslug($id)->first();
         if($Bike){
-        $Bikeslider=Bikesale::wherestatus('Active')->take(6)->get();
+        //$Bikeslider=Bikesale::wherestatus('Active')->take(6)->get();
         SEOMeta::setRobots('index, follow');
         SEOTools::setTitle($Bike->title);
         SEOTools::setDescription($Bike->metadescription);
          OpenGraph::addImage(@url('storage/app/files/shares/uploads/'.$Bike->path.'/'.$Bike->photoone));
         JsonLd::setType('proudct');
-        $Similarbike=Bikesale::with('division','district','thana','bikebrand')->where('slug','!=',$id)->take(12)->get();
+        $Similarbike=Bikesale::with('division','district','thana','bikebrand')->where('bikebrand_id',$Bike->bikebrand_id)->where('slug','!=',$id)->wherestatus('Active')->take(12)->get();
         $Divisionalbike=Division::with('bikesale')->get();
-       return view('frontend.en.bikesale.show',compact('Similarbike','Bike','Bikeslider','Divisionalbike'));
+       return view('frontend.en.bikesale.show',compact('Similarbike','Bike','Divisionalbike'));
         }
         else{
             abort(404);
