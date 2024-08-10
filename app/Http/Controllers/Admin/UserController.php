@@ -151,6 +151,7 @@ class UserController extends Controller
           $pass=Hash::make($request->password);
         }
       $list->admin_id = Auth::id();
+      $list->fullname = $request->fullname;
       $list->salepost = $request->salepost;
       $list->email = $request->email;
        $list->phone = $request->phone;
@@ -209,4 +210,3 @@ class UserController extends Controller
         return view('admin.bike.bikesels')->with('breadcrumbs', $breadcrumbs);
     }
 }
-

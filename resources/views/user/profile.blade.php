@@ -13,7 +13,7 @@
         <ul class="ac-menu ps-0 mb-0">
           
             <li><a  style="color: #000;" href="{{url('user/profile')}}">My account</a></li>
-            <li><a href="{{url('user/membership')}}">My membership</a></li>
+            {{-- <li><a href="{{url('user/membership')}}">My membership</a></li> --}}
             <li><a href="{{url('user/addshop')}}">Shop</a></li>
             <li><a href="{{url('user/dashboard')}}">My dashboard</a></li>
         </ul>

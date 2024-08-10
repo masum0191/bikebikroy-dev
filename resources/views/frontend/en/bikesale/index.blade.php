@@ -160,7 +160,7 @@
                                     <div class="col-md-7">
                                         <div class="card-body">
                                             <h5 class="card-title mb-0">{{$bike->title}}</h5>
-                                            <p class="card-text mb-1">{{@$bike->district->district}}, {{@$bike->bikebrand->bikebrand}} </p>
+                                            <p class="card-text mb-1">{{@$bike->thana->thana}}, {{@$bike->district->district}}, {{ @$bike->division->division}}  </p>
 
                                                <span class="member-btn"><i class="fas fa-star"></i>
                                                 {{@$bike->user->package->packagename}}</span>
