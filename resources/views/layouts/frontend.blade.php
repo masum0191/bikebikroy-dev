@@ -68,9 +68,9 @@
                     <li class="">
                         <a  href="{{url('bikesale')}}">All Ads</a>
                     </li>
-                    <li class="{{url('/bn')}}">
-                        <button>বাংলা</button>
-                    </li>
+                    <!--<li class="{{url('/bn')}}">-->
+                    <!--    <button>বাংলা</button>-->
+                    <!--</li>-->
 
                 </ul>
                     <ul class="navbar-nav ms-auto">
