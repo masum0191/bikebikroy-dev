@@ -66,7 +66,7 @@ public function type($type)
         SEOTools::setTitle('Bikebikory');
         SEOTools::setDescription('Buy and Sale Your Bike');
         JsonLd::setType('WebSite');
-        $Allbikes=Bikesale::with('district','thana','bikebrand','bikemodel','user.package')->wherestatus('Active')->wherearchive(0)->orderBy('updated_at','DESC')->paginate(20);
+        $Allbikes=Bikesale::with('district','thana','bikebrand','bikemodel','user.package')->wherestatus('Active')->wherearchive(0)->orderBy('pub_date','DESC')->paginate(20);
         $Bikeslider=Bikesale::wherestatus('Active')->take(6)->get();
         $Bikebrad=Bikebrand::with('bikesale')->wherestatus(1)->wherehome(1)->get();
         $Divisionalbike=Division::with('bikesale')->get();
