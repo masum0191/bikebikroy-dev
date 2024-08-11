@@ -10,8 +10,8 @@
         <div class="row">
             <div class="col-md-12">
                 <h3 class="ad-post-head mb-0 pt-5 text-center">
-                    Welcome {{Auth::user()->fullname}} <br>
-                    Let's Quick Posting.
+                    Welcome <br>
+                    Post your bike and sell quickly
                 </h3>
             </div>
         </div>
