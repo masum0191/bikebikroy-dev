@@ -1,10 +1,12 @@
 @extends('layouts.frontend')
 @section('page-style')
-<link href="{{asset('assets/css/lightbox.min.css')}}" rel="stylesheet" type="text/css">
+<!--<link href="{{asset('assets/css/lightbox.min.css')}}" rel="stylesheet" type="text/css">-->
+<link type="text/css" rel="stylesheet" media="all" href="{{asset('product/magnific-popup/css/magnific-popup.css')}}" />
+<link type="text/css" rel="stylesheet" media="all" href="{{asset('product/fancybox/source/jquery.fancybox.css')}}" />
 <style>
     @media (max-width: 767px) { 
     .bike-post-list{
-        width: 100%;
+    width: 100%;
     height: 240px;
     }
     .product-share ul{
@@ -18,6 +20,15 @@ margin-top: 8px;
         display: inline-block;
 
     }
+    
+        #fancy .large-5.column {
+    text-align: center;
+    background:#cccccc;
+}
+.xzoom-container .xzoom4 {
+    margin-top:20px;
+}
+  
 .image-container {
     width: 100px; /* Set a fixed width for the container */
     height: 70px; /* Set a fixed height for the container */
@@ -26,14 +37,19 @@ margin-top: 8px;
     margin-right: 10px; /* Add spacing between the containers (adjust as needed) */
 }
 
-   .xzoom-gallery5{
-  width: 100%; /* Ensure the image fills the container */
-    height: 100%; /* Ensure the image fills the container */
+   .xzoom-gallery4{
+   /* Ensure the image fills the container  */
+    height: 78px; /* Ensure the image fills the container */
     object-fit: cover; /* Cover the entire container while maintaining aspect ratio */
 
 
    }
-
+.xzoom4{
+    max-height: 330px;
+    height: 90%;
+    height: 330px; /* Ensure the image fills the container */
+    
+}
 ul.sfty-li li {
     list-style: disc;
 }
@@ -99,17 +115,43 @@ ul.sfty-li li {
      
                     <div class="col-md-12">
                         <div class="">
-                             <section id="magnific">
+    <section id="fancy">
+    <div class="row">
+     
+      <div class="large-5 column">
+        <div class="xzoom-container">
+            
+          <img class="xzoom4" id="xzoom-fancy" src="{{@url('storage/app/files/shares/uploads/'.$Bike->path.'/'.$Bike->photoone)}}" xoriginal="{{@url('storage/app/files/shares/uploads/'.$Bike->path.'/'.$Bike->photoone)}}"  max-width="735" />
+          <div class="xzoom-thumbs pt-2">
+            <a href="{{@url('storage/app/files/shares/uploads/'.$Bike->path.'/'.$Bike->photoone)}}"><img class="xzoom-gallery4" width="80" src="{{@url('storage/app/files/shares/uploads/'.$Bike->path.'/'.$Bike->photoone)}}" xpreview="{{@url('storage/app/files/shares/uploads/'.$Bike->path.'/'.$Bike->photoone)}}" title="{{$Bike->title}}"></a>
+            @if ($Bike->phototwo !== 'not-found.webp')
+            <a href="{{@url('storage/app/files/shares/uploads/'.$Bike->path.'/'.$Bike->phototwo)}}"><img class="xzoom-gallery4" width="80" src="{{@url('storage/app/files/shares/uploads/'.$Bike->path.'/'.$Bike->phototwo)}}" title="{{$Bike->title}}"></a>
+            @endif 
+
+            @if ($Bike->photothree !== 'not-found.webp')
+            <a href="{{@url('storage/app/files/shares/uploads/'.$Bike->path.'/'.$Bike->photothree)}}"><img class="xzoom-gallery4" width="80" src="{{@url('storage/app/files/shares/uploads/'.$Bike->path.'/'.$Bike->photothree)}}" title="{{$Bike->title}}"></a>
+            @endif
+
+            @if ($Bike->photofour !== 'not-found.webp')
+            <a href="{{@url('storage/app/files/shares/uploads/'.$Bike->path.'/'.$Bike->photofour)}}"><img class="xzoom-gallery4" width="80" src="{{@url('storage/app/files/shares/uploads/'.$Bike->path.'/'.$Bike->photofour)}}" title="{{$Bike->title}}"></a>
+            @endif
+          </div>
+        </div>          
+      </div>
+      <div class="large-7 column"></div>
+    </div>
+    </section>   
+{{--<section id="magnific">
     <div class="row">
       <!--<div class="large-12 column"><h3>With Magnific Pop-up</h3>Left click while zooming</div>-->
       <div class="large-7 column">
-        <div class="xzoom-container ">
+        <div class="xzoom-container">
             <div style="text-align:center;">
-                <img class="xzoom5 " style="" id="xzoom-magnific" alt="{{$Bike->title}}" src="{{@url('storage/app/files/shares/uploads/'.$Bike->path.'/'.$Bike->photoone)}}" xoriginal="{{@url('storage/app/files/shares/uploads/'.$Bike->path.'/'.$Bike->photoone)}}" height="400px" max-width="735" />
+                <img class="xzoom5 " style="object-fit: cover;" id="xzoom-magnific" alt="{{$Bike->title}}" src="{{@url('storage/app/files/shares/uploads/'.$Bike->path.'/'.$Bike->photoone)}}" xoriginal="{{@url('storage/app/files/shares/uploads/'.$Bike->path.'/'.$Bike->photoone)}}" height="400px" max-width="735" />
           
             </div>
           <div class="xzoom-thumbs pt-2" >
-            <a class="image-container" href="{{@url('storage/app/files/shares/uploads/'.$Bike->path.'/'.$Bike->photoone)}}"><img class="xzoom-gallery5" src="{{@url('storage/app/files/shares/uploads/'.$Bike->path.'/'.$Bike->photoone)}}" title="{{$Bike->title}}"></a>
+            <a class="image-container" href="{{@url('storage/app/files/shares/uploads/'.$Bike->path.'/'.$Bike->photoone)}}"><img class="xzoom-gallery5" src="{{@url('storage/app/files/shares/uploads/'.$Bike->path.'/'.$Bike->photoone)}}" xpreview="{{@url('storage/app/files/shares/uploads/'.$Bike->path.'/'.$Bike->photoone)}}" title="{{$Bike->title}}"></a>
 
 @if ($Bike->phototwo !== 'not-found.webp')
     <a class="image-container" href="{{@url('storage/app/files/shares/uploads/'.$Bike->path.'/'.$Bike->phototwo)}}"><img class="xzoom-gallery5" src="{{@url('storage/app/files/shares/uploads/'.$Bike->path.'/'.$Bike->phototwo)}}" title="{{$Bike->title}}"></a>
@@ -129,7 +171,7 @@ ul.sfty-li li {
       </div>
       
     </div>
-    </section>
+    </section>--}}
                             {{--<div class="exzoom" id="exzoom">
                                 <!-- Images -->
 
@@ -333,7 +375,9 @@ ul.sfty-li li {
 
 @endsection
 @section('page-script')
-<script src="{{asset('assets/js/lightbox.min.js')}}"></script>
+ <script type="text/javascript" src="{{asset('product/magnific-popup/js/magnific-popup.js')}}"></script>
+<script type="text/javascript" src="{{asset('product/zoom/xzoom.min.js')}}"></script>
+   <script type="text/javascript" src="{{asset('product/fancybox/source/jquery.fancybox.js')}}"></script>
 <script>
       $(document).ready(function () {
        $('#Hidephone').click(function(){

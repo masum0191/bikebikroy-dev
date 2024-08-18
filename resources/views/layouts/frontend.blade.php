@@ -25,17 +25,9 @@
     <!--<link rel="stylesheet" href="{{asset('product/css/demo.css')}}" />-->
   <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   <!--<link type="text/css" rel="stylesheet" media="all" href="{{asset('product/fancybox/source/jquery.fancybox.css')}}" />-->
-  <link type="text/css" rel="stylesheet" media="all" href="{{asset('product/magnific-popup/css/magnific-popup.css')}}" />
+  
     @yield('page-style')
-    <style>
-        #magnific .large-7.column {
-    text-align: center;
-    background:#cccccc;
-}
-.xzoom-container .xzoom5 {
-    margin-top:20px;
-}
-    </style>
+    
     <!--Whatsapp-->
 <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
 <div class="elfsight-app-955f909a-6cbe-4edd-b841-4a9239a4bd35" data-elfsight-app-lazy></div>
@@ -222,9 +214,9 @@
     <script src="{{asset('assets/js/popper.min.js')}}"></script>
     <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
     {{-- <script src="{{asset('assets/js/custom.js')}}"></script> --}}
-     <script type="text/javascript" src="{{asset('product/magnific-popup/js/magnific-popup.js')}}"></script>
-    <script type="text/javascript" src="{{asset('product/zoom/xzoom.min.js')}}"></script>
-   
+    
+
+
    
     
    
